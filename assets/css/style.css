@@ -1054,7 +1054,8 @@ main {
 .project-item { display: none; }
 
 .project-item.active {
-  display: block;
+  display: flex;
+  gap: 25px;
   animation: scaleUp 0.25s ease forwards;
 }
 
