@@ -158,6 +158,7 @@ form.addEventListener("submit", function (event) {
 
 
 
+
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -184,3 +185,48 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+//animation in skill section
+
+const skillSection = document.querySelector(".skill");
+const skillItems = document.querySelectorAll(".skills-item");
+
+const animateSkillBars = () => {
+  skillItems.forEach((item, index) => {
+    const fillBar = item.querySelector(".skill-progress-fill");
+    const dataElem = item.querySelector("data");
+    const skillValue = parseInt(dataElem.getAttribute("value"));
+
+    // Reset bar and number
+    fillBar.style.width = "0%";
+    dataElem.textContent = "0%";
+
+    // Animate bar after delay
+    setTimeout(() => {
+      fillBar.style.width = skillValue + "%";
+
+      // Animate number
+      let counter = 0;
+      const step = Math.ceil(skillValue / 30); // speed control
+      const interval = setInterval(() => {
+        counter += step;
+        if (counter >= skillValue) {
+          counter = skillValue;
+          clearInterval(interval);
+        }
+        dataElem.textContent = counter + "%";
+      }, 30); // runs every 30ms
+    }, index * 200); // stagger each bar
+  });
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateSkillBars();
+    }
+  });
+}, {
+  threshold: 0.5,
+});
+
+observer.observe(skillSection);
