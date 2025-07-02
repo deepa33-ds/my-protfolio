@@ -248,7 +248,7 @@ article.active {
 .h4,
 .h5 {
   color: var(--white-2);
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .h2 { font-size: var(--fs-1); }
@@ -431,6 +431,20 @@ main {
   visibility: visible;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* ensures it stacks vertically */
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+
 .contacts-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -449,6 +463,49 @@ main {
   width: calc(100% - 46px);
 }
 
+
+.contact-form .input-wrapper {
+  margin-bottom: 20px;
+}
+
+.contact-form .input-wrapper ion-icon {
+  margin-right: 8px;
+  color: #888;
+  vertical-align: middle;
+}
+
+.contact-form .form-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form textarea.form-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-form .form-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form .form-btn:hover {
+  background-color: #0056b3;
+}
+
+
 .contact-title {
   color: var(--light-gray-70);
   font-size: var(--fs-8);
@@ -462,6 +519,54 @@ main {
 }
 
 .contact-info address { font-style: normal; }
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-wrapper ion-icon {
+  font-size: 20px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.input-wrapper textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-btn:hover {
+  background-color: #0056b3;
+}
+
 
 .social-list {
   display: flex;
@@ -1261,11 +1366,52 @@ main {
 .form-title { margin-bottom: 20px; }
 
 .input-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
-  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
+
+.input-wrapper ion-icon {
+  font-size: 20px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.input-wrapper textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-btn:hover {
+  background-color: #0056b3;
+}
+
 
 .form-input {
   color: var(--white-2);
@@ -1335,6 +1481,62 @@ textarea.form-input::-webkit-resizer { display: none; }
 .form-btn:disabled:hover { background: var(--border-gradient-onyx); }
 
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-wrapper ion-icon {
+  font-size: 20px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.input-wrapper textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-btn:hover {
+  background-color: #0056b3;
+}
+
+.blog-item video.imgs {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 
 
 

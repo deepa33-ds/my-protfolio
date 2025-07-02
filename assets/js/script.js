@@ -124,6 +124,28 @@ const formBtn = document.querySelector("[data-form-btn]");
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
 
+    // handle form submission
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // prevent default form submission
+
+  // Collect form data
+  const formData = {
+    fullName: form.querySelector('[name="name"]').value,
+    email: form.querySelector('[name="email"]').value,
+    phone: form.querySelector('[name="phone"]').value,
+    subject: form.querySelector('[name="subject"]').value,
+    message: form.querySelector('[name="message"]').value
+  };
+
+  console.log("Form submitted:", formData);
+
+  // You can show a success message or reset the form here
+  alert("Message sent successfully!");
+  form.reset();
+  formBtn.setAttribute("disabled", ""); // disable button again
+});
+
+
     // check form validation
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
